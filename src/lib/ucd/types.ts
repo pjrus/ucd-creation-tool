@@ -38,6 +38,8 @@ export type Relationship = {
   id: string
   source: string
   target: string
+  sourceName: string
+  targetName: string
   type: RelationshipType
   label?: string
   sourceRange?: SourceRange
