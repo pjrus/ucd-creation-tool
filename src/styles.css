@@ -54,6 +54,12 @@ body {
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-diagram-ink: var(--diagram-ink);
+  --color-diagram-edge: var(--diagram-edge);
+  --color-diagram-muted: var(--diagram-muted);
+  --color-diagram-rule: var(--diagram-rule);
+  --color-diagram-surface: var(--diagram-surface);
+  --color-diagram-system: var(--diagram-system);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -96,6 +102,12 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --diagram-ink: oklch(0.24 0.015 260);
+  --diagram-edge: oklch(0.39 0.02 260);
+  --diagram-muted: oklch(0.47 0.02 260);
+  --diagram-rule: oklch(0.87 0.01 260);
+  --diagram-surface: oklch(0.995 0.002 260);
+  --diagram-system: oklch(0.975 0.006 260);
 }
 
 .dark {
@@ -130,6 +142,12 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --diagram-ink: oklch(0.9 0.01 260);
+  --diagram-edge: oklch(0.72 0.015 260);
+  --diagram-muted: oklch(0.7 0.015 260);
+  --diagram-rule: oklch(0.34 0.015 260);
+  --diagram-surface: oklch(0.18 0.01 260);
+  --diagram-system: oklch(0.215 0.012 260);
 }
 
 @layer base {
