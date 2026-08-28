@@ -60,6 +60,7 @@ body {
   --color-diagram-rule: var(--diagram-rule);
   --color-diagram-surface: var(--diagram-surface);
   --color-diagram-system: var(--diagram-system);
+  --color-editor-surface: var(--editor-surface);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -108,6 +109,21 @@ body {
   --diagram-rule: oklch(0.87 0.01 260);
   --diagram-surface: oklch(0.995 0.002 260);
   --diagram-system: oklch(0.975 0.006 260);
+  --editor-surface: oklch(0.985 0.004 260);
+  --editor-foreground: oklch(0.22 0.015 260);
+  --editor-gutter: oklch(0.965 0.006 260);
+  --editor-gutter-foreground: oklch(0.54 0.015 260);
+  --editor-active-line: oklch(0.94 0.015 263);
+  --editor-selection: oklch(0.82 0.07 263);
+  --syntax-heading: oklch(0.47 0.2 263);
+  --syntax-keyword: oklch(0.47 0.2 263);
+  --syntax-property: oklch(0.43 0.12 200);
+  --syntax-string: oklch(0.42 0.11 170);
+  --syntax-operator: oklch(0.48 0.17 305);
+  --syntax-atom: oklch(0.47 0.17 305);
+  --syntax-number: oklch(0.46 0.14 55);
+  --syntax-comment: oklch(0.53 0.02 260);
+  --syntax-punctuation: oklch(0.46 0.02 260);
 }
 
 .dark {
@@ -148,6 +164,92 @@ body {
   --diagram-rule: oklch(0.34 0.015 260);
   --diagram-surface: oklch(0.18 0.01 260);
   --diagram-system: oklch(0.215 0.012 260);
+  --editor-surface: oklch(0.17 0.01 260);
+  --editor-foreground: oklch(0.9 0.01 260);
+  --editor-gutter: oklch(0.145 0.01 260);
+  --editor-gutter-foreground: oklch(0.6 0.015 260);
+  --editor-active-line: oklch(0.23 0.025 263);
+  --editor-selection: oklch(0.34 0.08 263);
+  --syntax-heading: oklch(0.74 0.14 263);
+  --syntax-keyword: oklch(0.74 0.14 263);
+  --syntax-property: oklch(0.76 0.11 200);
+  --syntax-string: oklch(0.76 0.12 170);
+  --syntax-operator: oklch(0.76 0.13 305);
+  --syntax-atom: oklch(0.76 0.13 305);
+  --syntax-number: oklch(0.78 0.12 70);
+  --syntax-comment: oklch(0.62 0.02 260);
+  --syntax-punctuation: oklch(0.66 0.02 260);
+}
+
+.editor-split {
+  display: grid;
+  grid-template-columns: minmax(18rem, var(--editor-split)) 7px minmax(
+      20rem,
+      1fr
+    );
+}
+
+.editor-resize-handle {
+  position: relative;
+  cursor: col-resize;
+  touch-action: none;
+  background: var(--border);
+  outline: none;
+}
+
+.editor-resize-handle::before {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: -3px;
+  content: '';
+}
+
+.editor-resize-handle > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--muted-foreground);
+  opacity: 0.55;
+  transform: translate(-50%, -50%);
+}
+
+.editor-resize-handle:hover,
+.editor-resize-handle:focus-visible,
+.editor-resize-handle.is-dragging {
+  background: var(--primary);
+}
+
+.editor-resize-handle:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--background),
+    0 0 0 4px var(--ring);
+}
+
+@media (max-width: 767px) {
+  .editor-split {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(20rem, var(--editor-split)) 7px minmax(
+        20rem,
+        1fr
+      );
+  }
+
+  .editor-resize-handle {
+    cursor: row-resize;
+  }
+
+  .editor-resize-handle::before {
+    inset-block: -3px;
+    inset-inline: 0;
+  }
+
+  .editor-resize-handle > span {
+    width: 32px;
+    height: 3px;
+  }
 }
 
 @layer base {

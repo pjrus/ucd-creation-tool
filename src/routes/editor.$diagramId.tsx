@@ -1,7 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { SquarePen } from 'lucide-react'
 
-import { PagePlaceholder } from '@/components/page-placeholder'
+import { EditorWorkspace } from '@/components/editor/editor-workspace'
 
 export const Route = createFileRoute('/editor/$diagramId')({
   component: SavedEditorPage,
@@ -9,12 +8,5 @@ export const Route = createFileRoute('/editor/$diagramId')({
 
 function SavedEditorPage() {
   const { diagramId } = Route.useParams()
-
-  return (
-    <PagePlaceholder
-      icon={SquarePen}
-      title="Saved diagram"
-      description={`Diagram ${diagramId} will load from local browser storage here.`}
-    />
-  )
+  return <EditorWorkspace diagramId={diagramId} />
 }
