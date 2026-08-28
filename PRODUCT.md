@@ -37,7 +37,7 @@ Users work in a split editor while discussing requirements, refining scope, and 
 
 ## Evidence on Hand
 
-The supplied hospital management syntax is the canonical initial example. No external brand assets, commercial claims, or user research artefacts were supplied.
+The supplied reference syntax establishes the canonical initial grammar. No external brand assets, commercial claims, or user research artefacts were supplied.
 
 ## Product Principles
 
